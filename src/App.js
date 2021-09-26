@@ -169,10 +169,8 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header gradient-text">My NFT Collection</p>
-          <p className="sub-text">
-            Each unique. Each beautiful. Discover your NFT today.
-          </p>
+          <p className="header gradient-text">Bonk Bag</p>
+          <p className="sub-text">fashionable nonsense !</p>
           <p>
             <Link to={OPENSEA_LINK} className="btn btn-primary">
               🌊 View Collection on OpenSea
