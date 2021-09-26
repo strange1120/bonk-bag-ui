@@ -138,7 +138,8 @@ const App = () => {
 
   useEffect(() => {
     checkIfWalletIsConnected();
-  }, [checkIfWalletIsConnected]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   /*
    * We added a simple onClick event here.
