@@ -113,7 +113,10 @@ const App = () => {
    * We want the "Connect to Wallet" button to dissapear if they've already connected their wallet!
    */
   const renderMintUI = () => (
-    <button onClick={null} className="cta-button connect-wallet-button">
+    <button
+      onClick={askContractToMintNft}
+      className="cta-button connect-wallet-button"
+    >
       Mint NFT
     </button>
   );
