@@ -3,13 +3,14 @@ import { ethers } from "ethers";
 import twitterLogo from "./assets/twitter-logo.svg";
 import React, { useEffect, useState } from "react";
 import bonkBag from "./utils/BonkBag.json";
+import { Link } from "react-router-dom";
 
-const TWITTER_HANDLE = "_buildspace";
+const TWITTER_HANDLE = "_nighthawk69_";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
-// const OPENSEA_LINK = "";
-// const TOTAL_MINT_COUNT = 50;
+const OPENSEA_LINK = "https://testnets.opensea.io/collection/bonkbagnft-v4";
+// const TOTAL_MINT_COUNT = 1000;
 
-const CONTRACT_ADDRESS = "0x26c99D5906b0810cA236c7b95173563cF09af0BD";
+const CONTRACT_ADDRESS = "0x4b52B9fC5015A56faE8b01462014E573DB1a2cc9";
 
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
@@ -155,10 +156,7 @@ const App = () => {
    * We want the "Connect to Wallet" button to dissapear if they've already connected their wallet!
    */
   const renderMintUI = () => (
-    <button
-      onClick={askContractToMintNft}
-      className="cta-button connect-wallet-button"
-    >
+    <button onClick={askContractToMintNft} className="cta-button mint-button">
       Mint NFT
     </button>
   );
@@ -174,6 +172,11 @@ const App = () => {
           <p className="sub-text">
             Each unique. Each beautiful. Discover your NFT today.
           </p>
+          <p>
+            <Link to={OPENSEA_LINK} className="btn btn-primary">
+              🌊 View Collection on OpenSea
+            </Link>
+          </p>
           {currentAccount === ""
             ? renderNotConnectedContainer()
             : renderMintUI()}
@@ -185,7 +188,7 @@ const App = () => {
             href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+          >{`built by @${TWITTER_HANDLE}`}</a>
         </div>
       </div>
     </div>
